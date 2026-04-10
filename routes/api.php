@@ -23,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     // Applications — stats MUST come before {id} to avoid route collision
     Route::get('/applications/stats', [ApplicationController::class, 'stats']);
+    Route::get('/applications/export', [ApplicationController::class, 'export']);
 
     Route::apiResource('applications', ApplicationController::class)->except(['show']);
     Route::get('/applications/{id}',    [ApplicationController::class, 'show']);
