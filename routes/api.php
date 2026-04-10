@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::patch('/user/password', [AuthController::class, 'updatePassword']);
 
     // Applications — stats MUST come before {id} to avoid route collision
+    Route::get('/applications/export', [ApplicationController::class, 'export']);
     Route::get('/applications/stats', [ApplicationController::class, 'stats']);
 
     Route::apiResource('applications', ApplicationController::class)->except(['show']);
