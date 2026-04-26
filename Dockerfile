@@ -1,5 +1,7 @@
 FROM php:8.2-apache
 
+ENV MYSQL_ATTR_SSL_CA=""
+
 # Install extensions
 RUN apt-get update && apt-get install -y \
     git curl zip unzip libpng-dev libonig-dev libxml2-dev \
